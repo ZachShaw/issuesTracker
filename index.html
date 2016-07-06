@@ -1,0 +1,80 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+		<head>
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>DueDil Issue App</title>
+
+		    <!-- CSS -->
+				<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		    <link rel="stylesheet" type="text/css" href="css/style.css">
+		    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+		    <!-- JS -->
+		    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		    <script src="app.js"></script>
+
+		</head>
+		<body>
+				<div class="container" ng-app="issueApp" ng-controller="mainController">
+						<header>
+								<!-- nav bar -->
+								<nav>
+							      <div class="row nav">
+							        	<img src="https://worldvectorlogo.com/logos/angular-3.svg" alt="dueDilLogo" class="logo">
+										</div>
+										<div class="row">
+												<div class="header">
+														<i class="ion-arrow-shrink icon-header"></i>
+												</div>
+												<div class="header header-text">
+														<h3>Issue Tracker</h3>
+												</div>
+										</div>
+								</nav>
+								<!-- filter box -->
+						    <div class="row">
+										<div class="filter-box">
+												<div class="filter-text">
+														<p>Selected filter: {{ filterParam }}</p>
+												</div>
+												<div class="filter-search">
+														<i class="ion-ios-search-strong icon-small"></i>
+														<input label="Search" type="text" class="searchbar" ng-model="searchParam" />
+												</div>
+												<div class="filter-buttons">
+													<a href="#" ng-if="searchParam" class="btn btn-ghost first" ng-click="clearSearch()">Clear Search</a>
+													<a href="#" ng-if="filterParam" class="btn btn-ghost last" ng-click="clearFilter()">Clear Filter</a>
+												</div>
+							    	</div>
+								</div>
+						</header>
+						<div class="row main-content">
+								<div class="table-responsive-vertical shadow-z-1">
+									  <!-- Table starts here -->
+									  <table id="table" class="table table-hover table-mc-light-blue">
+												<thead>
+														<tr>
+																<th ng-click="sortType='id'; sortReverse = !sortReverse">Id</th>
+																<th ng-click="sortType='assignee'; sortReverse = !sortReverse">Assignee</th>
+																<th ng-click="sortType='category'; sortReverse = !sortReverse">Category</th>
+																<th ng-click="sortType='project'; sortReverse = !sortReverse">Project</th>
+																<th>Description</th>
+														</tr>
+												</thead>
+										    <tbody>
+										      	<tr ng-repeat="issue in issues | orderBy:sortType:sortReverse | filter: filterParam | filter: searchParam">
+												        <td ng-click="filterByClick(issue.id)">{{ issue.id }}</td>
+												        <td ng-click="filterByClick(issue.assignee)">{{ issue.assignee }}</td>
+												        <td ng-click="filterByClick(issue.category)">{{ issue.category }}</td>
+												        <td ng-click="filterByClick(issue.project)">{{ issue.project }}</td>
+																<td ng-click="filterByClick(issue.description)">{{ issue.description }}</td>
+										      	</tr>
+										    </tbody>
+										</table>
+								</div>
+						</div>
+				</div>
+		</body>
+</html>

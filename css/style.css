@@ -1,0 +1,268 @@
+/* -- import Roboto Font ---------------------------- */
+@import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic&subset=latin,cyrillic";
+@import 'material.css';
+/* -- Box model ------------------------------- */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:focus {outline: none;}
+/* -- app style ------------------------------- */
+html,
+body {
+  padding-top: 25px;
+  min-height: 100%;
+  height: 100%;
+}
+html {
+  position: relative;
+  overflow-x: hidden;
+  margin: 16px;
+  padding: 0;
+  min-height: 100%;
+  font-size: 62.5%;
+}
+body {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0.01rem;
+  color: #212121;
+  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+tbody {
+  cursor: pointer;
+}
+
+th {
+  cursor: pointer;
+}
+
+input {
+  padding-left: 10px;
+}
+ul,
+ol,
+dl {
+  padding:0;
+  margin:0;
+}
+
+/* -- custom style ------------------------------- */
+.row {
+    clear: both;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    /*float: right;*/
+    width: 121px;
+    text-align: center;
+    /*margin-top: 5px;
+    margin-right:20px;*/
+    padding: 3px 20px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.4s, border 0.4s, color 0.4s;
+    transition: background-color 0.4s, border 0.4s, color 0.4s;
+}
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #3bcbc4;
+    border: 1px solid #3bcbc4;
+    color: #fff;
+    /*margin-right: 15px;*/
+}
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #3bcbc4;
+    color: #3bcbc4;
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #3bcbc4;
+}
+.btn-full:hover,
+.btn-full:active,
+input[type=submit] {
+    border: 1px solid #3bcbc4;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #3bcbc4;
+    color: #fff;
+}
+.logo {
+  height: 35px;
+  width: auto;
+  float: left;
+  margin-bottom: 20px;
+}
+.filter-box {
+  height: 100px;
+  width: 100%;
+  min-width: 375px;
+  border: 1px solid #fff;
+  background-color: #ededed;
+}
+.filter-box li {
+  list-style: none;
+}
+.filter-box p {
+  padding-left: 21px;
+  font-weight: 400;
+}
+.searchbar {
+  height: 30px;
+  width:250px;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  margin-bottom:15px;
+}
+.header {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.header-text {
+  vertical-align: middle;
+}
+.icon-header:link,
+.icon-header:visited {
+  width: 30px;
+  text-align: center;
+  font-size: 250%;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  line-height: 120%;
+}
+.icon-header:hover,
+.icon-header:active {
+  transform: scale(1.1) rotate(90deg);;
+  transition: transform 0.7s
+}
+.icon-header {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-size: 300%;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  line-height: 120%;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #3bcbc4;
+  font-size: 200%;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-left: 15px;
+  line-height: 120%;
+  vertical-align: middle;
+}
+.main-content {
+  max-width: 1140;
+  min-width: 375px;
+}
+.main-content td:first-child {
+  font-weight: 400;
+}
+.shadow-z-1 {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.filter-buttons {
+  clear:both;
+}
+.filter-buttons {
+  padding:0 15px;
+}
+.filter-buttons .btn {
+  width:100%;
+  margin-bottom:15px;
+}
+.filter-buttons .btn.first {
+  clear:both;
+  margin-left:0;
+}
+
+/* -- additional media queries ------------------------------- */
+
+/* Tablet breakpoints */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .searchbar {
+    width: 400px;
+  }
+  .filter-box {
+    height: 135px;
+  }
+}
+
+/* Small phones from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  .searchbar {
+    width: 270px;
+  }
+  .filter-box {
+    height: 135px;
+  }
+  .filter-box div {
+    clear:both;
+  }
+  .filterbox {
+    margin-left: 15px;
+  }
+}
+
+/* specific breakpoint styling */
+@media (min-width: 500px) {
+  .filter-buttons .btn {
+    float:left;
+    margin:0 5%;
+    width:45%;
+  }
+
+  .filter-buttons .btn.last {
+    margin-right:0;
+  }
+}
+/* specific breakpoint styling */
+@media (min-width: 768px) {
+  .filter-search,
+  .filter-buttons {
+    clear:none;
+  }
+  .filter-search {
+    float:left;
+  }
+  .filter-buttons {
+    float:right;
+  }
+  .filter-buttons .btn {
+    width:auto;
+    margin:0 15px 0 0;
+  }
+  .filter-buttons .btn.last {
+    margin-right:0;
+  }
+}
